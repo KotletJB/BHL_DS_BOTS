@@ -37,7 +37,4 @@ async def on_member_join(member):
 
 
 
-
-
-
 bot.run(token)

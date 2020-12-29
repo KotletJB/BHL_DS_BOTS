@@ -21,7 +21,5 @@ async def help(ctx):
 
     await ctx.channel.send(response)
 
-
-
 bot_command.run(token)
 
