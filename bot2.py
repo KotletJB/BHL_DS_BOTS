@@ -12,8 +12,6 @@ with open('../token_BHL_DS.txt') as f:
     token = f.read().strip()
 
 
-
-
 #bot commands
 @bot_command.command(name='helpme') # help command
 async def help(ctx):
