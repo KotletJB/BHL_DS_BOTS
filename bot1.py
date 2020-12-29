@@ -2,12 +2,19 @@
 
 import discord
 import asyncio
+from discord.ext import commands
 
+#creating insatns of bot
 bot = discord.Client()
+bot_command = commands.Bot(command_prefix='!')
+
+#geting token from file
 with open('../token_BHL_DS.txt') as f:
     token = f.read().strip()
 
-@bot.event
+
+#bot behavior
+@bot.event #respodnig on specif messeges
 async def on_message(message):
     print(message.content)
 
@@ -20,5 +27,27 @@ async def on_message(message):
 
     if message.content in key_words:
         await message.channel.send(key_words[message.content])
+
+
+@bot.event #Welcome new users
+async def on_member_join(member):
+    await member.create_dm()
+    await member.dm_channel.send(
+        f'Witaj na kanale BHL{member.name}!'
+    )
+
+
+
+
+
+#bot commands
+@bot_command.command(name='help') # help command
+async def help(ctx):
+    response = 'lore ipsum dole'
+
+    await ctx.send(response)
+
+
+
 
 bot.run(token)
