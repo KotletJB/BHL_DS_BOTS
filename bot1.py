@@ -19,6 +19,6 @@ async def on_message(message):
             key_words[key] = value
 
     if message.content in key_words:
-        await message.channel.send(key_words[massage.content])
-        
+        await message.channel.send(key_words[message.content])
+
 bot.run(token)
