@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
-import subprocess
+from subprocess import Popen
 
-subprocess.run(['./bot1.py', './bot2.py'])
+commands = ['./bot1.py', './bot1.py']
+procs = [ Popen(i) for i in commands ]
+for p in procs:
+   p.wait()
