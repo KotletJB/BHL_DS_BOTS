@@ -41,12 +41,11 @@ async def on_member_join(member):
 
 
 #bot commands
-@bot_command.command(name='help') # help command
+@bot_command.command(name='helpme') # help command
 async def help(ctx):
     response = 'lore ipsum dole'
 
-    await ctx.send(response)
-
+    await ctx.channel.send(response)
 
 
 
