@@ -5,7 +5,6 @@ import asyncio
 from discord.ext import commands
 
 #creating insatns of bot
-bot = discord.Client()
 bot_command = commands.Bot(command_prefix='!')
 
 #geting token from file
