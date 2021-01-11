@@ -28,13 +28,13 @@ async def on_message(message):
         await message.channel.send(key_words[message.content])
 
 
+
 @bot.event #Welcome new users
 async def on_member_join(member):
     await member.create_dm()
     await member.dm_channel.send(
         f'Witaj na kanale BHL{member.name}!'
     )
-
 
 
 bot.run(token)
